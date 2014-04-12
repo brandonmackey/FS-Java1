@@ -1,9 +1,2 @@
 INDEX VERSION 1.126+/Users/brandonmackey/Desktop/FS-Java1/Java1/.metadata/.plugins/org.eclipse.jdt.core
-3385709835.index
-1270315800.index
-4058085822.index
-1644206695.index
 2646448757.index
-3109287343.index
-4263833839.index
-2026379436.index

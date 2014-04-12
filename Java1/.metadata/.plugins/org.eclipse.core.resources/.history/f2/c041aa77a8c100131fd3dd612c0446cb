@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Weather</string>
+    
+    <string-array name="view_array">
+        <item>Indiana, Indianapolis</item>
+        <item>Flordia, Orlando</item>
+        <item>Colorado, Denver</item>
+    </string-array>
+    
+    <string-array name="view_array2">
+        <item>Extended Forcast Select City</item>
+        <item>Indianapolis</item>
+        <item>Orlando</item>
+        <item>Denver</item>
+    </string-array>
+
+</resources>

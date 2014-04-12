@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Weather</string>
+    
+    <string-array name="view_array">
+        <item>Indianapolis, Indiana</item>
+        <item>Orlando, Flordia</item>
+        <item>Denver, Colorado</item>
+    </string-array>
+    
+    <string-array name="view_array2">
+        <item>Indianapolis</item>
+        <item>Orlando</item>
+        <item>Denver</item>
+    </string-array>
+
+</resources>

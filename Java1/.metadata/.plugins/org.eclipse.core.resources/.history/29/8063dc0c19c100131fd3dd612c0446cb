@@ -1,0 +1,12 @@
+package com.BMackey.java1wk2_2;
+
+
+public enum myEnum {
+	
+	Indiana("59", "45", "Sunny"),
+	Flordia("70", "65", "Cloudy"),
+	Colorado("46", "32", "Snow");
+	
+	
+	
+}

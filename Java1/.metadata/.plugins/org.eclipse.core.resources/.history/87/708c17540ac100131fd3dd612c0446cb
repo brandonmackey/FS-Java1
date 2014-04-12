@@ -1,0 +1,6 @@
+package com.BMackey.java1wk2_2;
+
+public enum myEnum {
+	"Weather"
+	
+}

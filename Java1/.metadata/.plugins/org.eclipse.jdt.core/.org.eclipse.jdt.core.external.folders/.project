@@ -10,9 +10,9 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>.link0</name>
+			<name>.link1</name>
 			<type>2</type>
-			<location>/Development/adt-bundle-mac/sdk/sources/android-17</location>
+			<location>/Development/adt-bundle-mac/sdk/sources/android-19</location>
 		</link>
 	</linkedResources>
 </projectDescription>
