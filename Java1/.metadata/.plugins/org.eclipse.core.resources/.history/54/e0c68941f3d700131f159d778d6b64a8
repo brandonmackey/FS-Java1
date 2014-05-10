@@ -1,0 +1,85 @@
+//Brandon Mackey 
+//Java 1 
+//Term: 1405 Week 1
+//Full Sail University 
+
+package com.example.java1wk1_3;
+
+import android.app.Activity;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class MainActivity extends Activity{
+	
+	@Override
+	  protected void onCreate(Bundle savedInstanceState) {
+	  super.onCreate(savedInstanceState);
+	  setContentView(R.layout.activity_main);
+	  
+	
+	// Global variable
+	int HEADS = 1;
+	int TAILS = 2;
+	int coinFace; // coinFace is the Heads or Tails side of the coin
+	Button button1;
+	TextView textView1;
+	
+	// Flip Button 
+	
+	
+	
+	public class myCoin{
+		final int HEADS = 1;
+		final int TAILS = 2;
+		int coinFace;
+		
+		public myCoin(){
+			
+		}
+		
+		// Algorithm for Determining the coin flip 
+		public void flip(){
+			coinFace = (int) (Math.random() * 2) +1;	
+		}
+		
+		public boolean isHeads(){
+			return (coinFace == HEADS);
+		}
+		
+		public boolean isTails(){
+			return (coinFace == TAILS);
+		}
+		
+		public String toString(){
+			String faceSide;
+			if (coinFace == HEADS){
+				
+				faceSide = "Heads";
+			}else{
+				faceSide = "Tails";
+			}
+			return faceSide;
+		}
+	}
+
+	public class playFlip{
+		
+		public void main(String[] args){
+			
+			// creates the coin
+			myCoin buffaloNickel = new myCoin(); 
+			// flips the coin
+			buffaloNickel.flip();
+			
+			// Displays Heads or Tails in the textView
+			if (buffaloNickel.isHeads()){
+				textView1.setText(coinFace);
+			}
+			else if (buffaloNickel.isTails()){
+				textView1.setText(coinFace);
+			}
+		}
+	}
+	}
+
+} ////////END//////////

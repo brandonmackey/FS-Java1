@@ -2,8 +2,8 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="263" key="DIALOG_WIDTH"/>
-		<item value="308" key="DIALOG_Y_ORIGIN"/>
-		<item value="1448" key="DIALOG_X_ORIGIN"/>
+		<item value="272" key="DIALOG_Y_ORIGIN"/>
+		<item value="852" key="DIALOG_X_ORIGIN"/>
 		<item value="399" key="DIALOG_HEIGHT"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 	</section>
@@ -13,26 +13,26 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="textView1" key="selection"/>
+		<item value="flip" key="selection"/>
 		<list key="findhistory">
+			<item value="flip"/>
+			<item value="getData"/>
+			<item value="jsonView"/>
+			<item value="responseStr"/>
+			<item value="view_array"/>
+			<item value="mListItems"/>
+			<item value="objectInfo"/>
 			<item value="textView1"/>
-			<item value="gridView"/>
-			<item value="selected"/>
-			<item value="MyJsonData"/>
-			<item value=","/>
-			<item value="averageServiceBtn"/>
-			<item value="greatServiceBtn"/>
-			<item value="totalTip"/>
 		</list>
 		<list key="replacehistory">
+			<item value="city_array"/>
+			<item value="cityArray"/>
+			<item value="weatherInfo"/>
 			<item value="totalTipTV"/>
 			<item value="billAmountTV"/>
 			<item value="totalBillET"/>
 			<item value="greatServiceBtn"/>
 			<item value="averageServiceBtn"/>
-			<item value="weakServiceBtn"/>
-			<item value="totalTip"/>
-			<item value="billAmount"/>
 		</list>
 	</section>
 </section>

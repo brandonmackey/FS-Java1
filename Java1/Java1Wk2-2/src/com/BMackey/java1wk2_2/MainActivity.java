@@ -1,11 +1,30 @@
+// Brandon Mackey
+// Java 1 
+// Week 3 
+// Term: 1404
+
 package com.BMackey.java1wk2_2;
 
 import com.BMackey.java1wk2_2.MyJsonData;
+import com.BMackey.java1wk2_2.MyJsonData.getData;
 
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import org.json.JSONException;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -21,13 +40,21 @@ import android.widget.Toast;
 @SuppressLint("NewApi")
 public class MainActivity extends Activity {
 	
-
+	static String TAG = "NETWORK DATA - MYJSONDATA";
 	static Context context;
+	public static String _urlString = "http://api.wunderground.com/api/dc727ab887dd3079/conditions/q/";
+	static TextView jsonView;
+	String currentWeatherSelected;
+	String forecastWeatherSelected;
+
+		
+	Context mContext;
+	String[] cityArray;
+	String[] forecastArray;
+
 
 	
-	Context mContext;
-	String[] mListItems;
-	String[] mListItems2;
+	
 
 	@SuppressLint("NewApi")
 	@Override
@@ -35,75 +62,148 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		
 		setContentView(R.layout.activity_main);
+		
 
+		context = this;
+		
 		//Initializing Constants
 		mContext = this;
-		mListItems = getResources().getStringArray(R.array.view_array);		
+		cityArray = getResources().getStringArray(R.array.city_array); 
+		forecastArray = getResources().getStringArray(R.array.forecast_array); 
+
 		
-		// Create TextView for Daily Weather //
-		final TextView textView1 = (TextView) findViewById(R.id.textView1);
-		textView1.setTextSize(26);
+/////// NETWORK CONNECTION CHECK //////////////////////////////////////////////////////////////
+		if(MyJsonData.connectionStatus(mContext)){
+			MyJsonData.getData data = new getData();
+			data.execute(_urlString);
+
+		}
+		else{
+			AlertDialog alert = new AlertDialog.Builder(MainActivity.this).create();
+			alert.setTitle("ERROR!");
+			alert.setMessage("No Internet Connection Please Reconnect!");
+			alert.setButton(DialogInterface.BUTTON_POSITIVE, "OK", (DialogInterface.OnClickListener) null);
+			alert.show();
+		}
 		
-		// Create TextView for Daily Weather //
-		final TextView textView2 = (TextView) findViewById(R.id.textView2);
-		textView2.setTextSize(20);
-		
-		//Grid Adapter //
-		ArrayAdapter<String> gridAdapter = new ArrayAdapter<String>(mContext, android.R.layout.simple_spinner_item, mListItems);
-		
-		
-		// Create Grid View // 
-		final GridView gridView = (GridView) findViewById(R.id.gridView1);
-		gridView.setAdapter(gridAdapter);
-		gridView.setOnItemClickListener(new OnItemClickListener() {
+//////// Creating the Spinner //////////////////////////////////////////////////////////////////
+
+		Spinner currentWeatherSpin = (Spinner) findViewById(R.id.spinner1);
+		currentWeatherSpin.setOnItemSelectedListener(new OnItemSelectedListener() {
 
 			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				
-				String selected = mListItems[position];
-				
-				String myStr = MyJsonData.readJSON(selected);
+			public void onItemSelected(AdapterView<?> parent, View view,
+					int position, long id) {
 
-				textView2.setText(myStr);
+				if(cityArray[position] == null){
+					cityArray[position] = "Indianapolis";
+				}else {
 				
-				Toast.makeText(mContext, "You have selected " + mListItems[position] + " weather", Toast.LENGTH_LONG).show();
+				currentWeatherSelected = cityArray[position];
+				}
+
+				String myStr = null;
+				try {
+
+					myStr = MyJsonData.readJSON(createURL(currentWeatherSelected, forecastWeatherSelected));
+
+				} catch (JSONException e) {
+
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					Log.e(TAG, "Error", e);
+				}
 
 				
-			}
-		});
-		
-		
-		// Spinner adapter //
-		ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(mContext, android.R.layout.simple_spinner_item, mListItems);
-		spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		
-		
-		
-		// Creating the Spinner // 
-		Spinner viewSpinner =  (Spinner) findViewById(R.id.spinner1);
-		viewSpinner.setAdapter(spinnerAdapter);
-		viewSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
-			
-			@Override
-			public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
-				
-			
-				String selected = mListItems[position];
-				
-				String myStr = MyJsonData.readJSON(selected);
+				Toast.makeText(mContext, "You have selected " + cityArray[position] + " weather", Toast.LENGTH_LONG).show();
 
-				textView1.setText(myStr);
-				Toast.makeText(mContext, "You have selected " + mListItems[position] + " weather", Toast.LENGTH_LONG).show();
-				
 			}
 
 			@Override
 			public void onNothingSelected(AdapterView<?> parent) {
 				// TODO Auto-generated method stub
-				
+
 			}
 		});
 		
+		
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		// Second Spinner // 
+		// Creating the Spinner //
+
+				final Spinner forecastSpin = (Spinner) findViewById(R.id.spinner2);
+				forecastSpin.getSelectedItem();
+				forecastSpin.getSelectedItemPosition();
+				forecastSpin.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+					@Override
+					public void onItemSelected(AdapterView<?> parent, View view,
+							int position, long id) {
+
+						
+						forecastWeatherSelected = forecastArray[position];
+
+						String myStr = null;
+						try {
+
+							myStr = MyJsonData.readJSON(createURL(currentWeatherSelected, forecastWeatherSelected));
+
+						} catch (JSONException e) {
+
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+							Log.e(TAG, "Error", e);
+						}
+						
+			
+						
+			/////////////// Create TextView for Current Weather ////////////////////////////////////////////////////////
+										final TextView textView = (TextView) findViewById(R.id.textView1);
+										textView.setTextSize(26);
+										textView.getText().toString();
+										
+						
+						
+						Toast.makeText(mContext, "You have selected " + forecastArray[position] + " weather", Toast.LENGTH_LONG).show();
+
+					}
+
+					@Override
+					public void onNothingSelected(AdapterView<?> parent) {
+						// TODO Auto-generated method stub
+
+					}
+					
+				});
+			
+	
+
+							
+							
+							// String myStr2 = null;
+							// try {
+							//
+							// myStr2 = MyJsonData.readJSON(forecastWeatherSelected);
+							//
+							// } catch (JSONException e) {
+							//
+							// // TODO Auto-generated catch block
+							// e.printStackTrace();
+							// Log.e("TEXTVIEW", "Load TEXVIEW Error", e);
+							// }
+							//
+							// textView.setText(myStr2);
+				
 	}
 
+/////// CREATE URL STRING //////////////////////////////////////////////////////////////////////////////// 	
+		private String createURL(String cityVal, String forecastVal) {
+			String retURL;
+
+			retURL = _urlString + cityVal + forecastVal + ".json";
+
+			return retURL;
+
+		}
+	
 }

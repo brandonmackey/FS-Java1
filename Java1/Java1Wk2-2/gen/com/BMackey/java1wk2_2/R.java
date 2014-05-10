@@ -9,7 +9,8 @@ package com.BMackey.java1wk2_2;
 
 public final class R {
     public static final class array {
-        public static final int view_array=0x7f060000;
+        public static final int city_array=0x7f060000;
+        public static final int forecast_array=0x7f060001;
     }
     public static final class attr {
     }
@@ -29,11 +30,9 @@ public final class R {
     }
     public static final class id {
         public static final int container=0x7f080000;
-        public static final int digitalClock1=0x7f080001;
-        public static final int gridView1=0x7f080004;
-        public static final int spinner1=0x7f080003;
-        public static final int textView1=0x7f080002;
-        public static final int textView2=0x7f080005;
+        public static final int spinner1=0x7f080001;
+        public static final int spinner2=0x7f080002;
+        public static final int textView1=0x7f080003;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -44,5 +43,6 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f050000;
+        public static final int textView1=0x7f050001;
     }
 }

@@ -2,13 +2,22 @@
 <resources>
 
     <string name="app_name">Weather</string>
+       
+    <string name="textView1">Current Temperature</string>
     
-    <string-array name="view_array">
+    
+    
+    <string-array name="city_array">
         <item>Indianapolis</item>
         <item>Orlando</item>
         <item>Denver</item>
     </string-array>
     
+    <string-array name="forecast_array">
+        <item>Current Temperature</item>
+        <item>Extended Forecast</item>
+        
+    </string-array>
  
 
 </resources>

@@ -6,48 +6,30 @@
     tools:context="com.BMackey.java1wk2_2.MainActivity"
     tools:ignore="MergeRootFrame" >
 
-    <DigitalClock
-        android:id="@+id/digitalClock1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:text="DigitalClock" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/spinner1"
-        android:layout_marginTop="32dp"
-        android:text="TextView" />
-
     <Spinner
         android:id="@+id/spinner1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/digitalClock1"
-        android:layout_marginTop="24dp" />
+        android:layout_alignParentTop="true"
+        android:entries="@array/city_array" />
 
-    <GridView
-        android:id="@+id/gridView1"
-        android:layout_width="match_parent"
+    
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="24dp"
-        android:numColumns="3" >
-    </GridView>
+        android:layout_below="@+id/spinner1"
+        android:layout_marginTop="31dp"
+        android:entries="@array/forecast_array" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/spinner2"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50dp"
-        android:text="TextView" />
+        android:layout_marginTop="64dp" />
 
 </RelativeLayout>

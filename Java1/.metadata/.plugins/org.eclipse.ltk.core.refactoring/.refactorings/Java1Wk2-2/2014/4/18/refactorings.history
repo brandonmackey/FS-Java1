@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;textView1&apos; in &apos;com.BMackey.java1wk2_2.MainActivity.onCreate(...)&apos; to &apos;textView&apos;&#x0A;- Original project: &apos;Java1Wk2-2&apos;&#x0A;- Original element: &apos;com.BMackey.java1wk2_2.MainActivity.onCreate(Bundle).textView1&apos;&#x0A;- Renamed element: &apos;textView1&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;textView1&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;com.BMackey.java1wk2_2{MainActivity.java[MainActivity~onCreate~QBundle;@textView1!4502!4612!4561!4569!QTextView;!67108880!false" name="textView" references="true" stamp="1398633218876" version="1.0"/>
+</session>
