@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">NBA Game Scores</string>
+
+        <string-array name="score_array">
+        <item>Nets</item>
+        <item>Heat</item>
+        <item>TrailBlazers</item>
+        <item>Spurs</item>
+    </string-array>
+        
+        <string name="Select_Team">Select Team</string>
+        
+        
+    
+        
+    
+    
+
+</resources>

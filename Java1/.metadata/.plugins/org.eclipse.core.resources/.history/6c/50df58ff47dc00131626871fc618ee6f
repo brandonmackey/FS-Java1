@@ -1,0 +1,4 @@
+package com.bmackey.java1wk2_3;
+public enum myEnum {
+
+}

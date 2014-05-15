@@ -1,0 +1,39 @@
+// Brandon Mackey
+// Java 1 Week 2
+// Term: 1405
+// Full Sail University
+
+package com.bmackey.java1wk2_3;
+
+public enum myEnum {
+	
+	Nets		 ("22", "27", "26", "19", "94"),
+	Heat		 ("23", "19", "24", "30", "96"),
+	Trail Blazers("19", "25", "19", "19", "82"),
+	Spurs		 ("19", "32", "26", "27", "104");
+	
+	private final String hi;
+	private final String lo;
+	private final String dayType;
+	
+	private myEnum(String hi, String lo, String dayType){
+		
+		this.hi = hi;
+		this.lo = lo;
+		this.dayType = dayType;
+
+	}
+	
+	public String setHi(){
+		return hi;
+	}
+	
+	public String setLo(){
+		return lo;
+	}
+	
+	public String setDayType(){
+		return dayType;
+	}
+
+}

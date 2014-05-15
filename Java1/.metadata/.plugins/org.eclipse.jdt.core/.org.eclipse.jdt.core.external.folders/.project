@@ -14,10 +14,5 @@
 			<type>2</type>
 			<location>/Development/adt-bundle-mac/sdk/sources/android-19</location>
 		</link>
-		<link>
-			<name>.link1</name>
-			<type>2</type>
-			<location>/Development/adt-bundle-mac/sdk/sources/android-17</location>
-		</link>
 	</linkedResources>
 </projectDescription>

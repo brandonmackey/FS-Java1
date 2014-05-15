@@ -1,0 +1,52 @@
+// Brandon Mackey
+// Java 1 Week 2
+// Term: 1405
+// Full Sail University
+
+package com.bmackey.java1wk2_3;
+
+public enum myEnum {
+	
+	Nets		 ("22", "27", "26", "19", "94"),
+	Heat		 ("23", "19", "24", "30", "96"),
+	Trail_Blazers("19", "25", "19", "19", "82"),
+	Spurs		 ("19", "32", "26", "27", "104");
+		
+	private String firstQRT;
+	private String secondQRT;
+	private String thirdQRT;
+	private String fourthQRT;
+	private final String finalScore;
+	
+	
+	private myEnum(String firstQRT, String secondQRT, String thirdQRT, String fourthQRT, String finalScore){
+		
+		this.firstQRT = firstQRT;
+		this.secondQRT = secondQRT;
+		this.thirdQRT = thirdQRT;
+		this.fourthQRT = fourthQRT;
+		this.finalScore = finalScore;
+
+	}
+	
+	public String setfirstQRT(){
+		return firstQRT;
+	}
+	
+	public String setsecondQRT(){
+		return secondQRT;
+	}
+	
+	public String setthirdQRT(){
+		return thirdQRT;
+	}
+	
+	public String setfourthQRT(){
+		return fourthQRT;
+	}
+	
+	public String setfinalScore(){
+		return finalScore;
+	}
+
+}

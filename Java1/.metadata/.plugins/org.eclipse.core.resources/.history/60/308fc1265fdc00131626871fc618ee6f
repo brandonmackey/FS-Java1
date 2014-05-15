@@ -1,0 +1,20 @@
+<!-- 
+Brandon Mackey
+Java 1 Week 2
+Term: 1405
+Full Sail University
+-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Game Time</string>
+
+        <string-array name="score_array">
+        <item>Nets</item>
+        <item>Heat</item>
+        <item>Trail_Blazers</item>
+        <item>Spurs</item>
+    </string-array>
+
+</resources>
