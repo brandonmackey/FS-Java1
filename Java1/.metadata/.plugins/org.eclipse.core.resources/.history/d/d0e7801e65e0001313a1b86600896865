@@ -1,0 +1,29 @@
+// Brandon Mackey
+// Java 1 Week 3
+// Term: 1405
+// Full Sail University
+
+package com.bmackey.java1wk3;
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import com.bmackey.java1wk3.MainActivity;
+import com.bmackey.myJsonPkg.myJsonData;
+
+public class NetworkCheck {
+	
+/////// NETWORK CONNECTION CHECK //////////////////////////////////////////////////////////////
+		if(myJsonData.connectionStatus(mContext)){
+			myJsonData.getData data = new getData();
+			data.execute(_urlString);
+
+		}
+		else{
+			AlertDialog alert = new AlertDialog.Builder(MainActivity.this).create();
+			alert.setTitle("ERROR!");
+			alert.setMessage("No Internet Connection Please Reconnect!");
+			alert.setButton(DialogInterface.BUTTON_POSITIVE, "OK", (DialogInterface.OnClickListener) null);
+			alert.show();
+		}
+
+}

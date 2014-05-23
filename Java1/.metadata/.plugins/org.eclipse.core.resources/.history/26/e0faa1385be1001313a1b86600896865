@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ESPN</string>
+
+     <string-array name="score_array">
+        <item>Nets</item>
+        <item>Heat</item>
+        <item>Trail_Blazers</item>
+        <item>Spurs</item>
+    </string-array>
+    
+    <string-array name="player_array">
+        <item>Nets</item>
+        <item>Heat</item>
+        <item>Trail_Blazers</item>
+        <item>Spurs</item>
+    </string-array>
+        
+    <string name="Select_Team">Select Team</string>
+    <string name="Select_Player">Select Player</string>
+
+</resources>

@@ -1,0 +1,53 @@
+// Brandon Mackey
+// Java 1 Week 3
+// Term: 1405
+// Full Sail University
+
+package com.bmackey.java1wk3;
+
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.util.Log;
+
+import com.bmackey.java1wk3.MainActivity;
+import com.bmackey.myJsonPkg.myJsonData;
+import com.bmackey.myJsonPkg.myJsonData.getData;
+
+public class NetworkCheck {
+	
+/////////// Checks Network Status ////////////////////////////////////////////////////////////////
+	if(myJsonData.connectionStatus(mContext)){
+		myJsonData.getData data = new getData();
+		data.execute(MainActivity._urlString);
+
+	}
+	else{
+		AlertDialog alert = new AlertDialog.Builder(MainActivity.context).create();
+		alert.setTitle("ERROR!");
+		alert.setMessage("No Internet Connection Please Reconnect!");
+		alert.setButton(DialogInterface.BUTTON_POSITIVE, "OK", (DialogInterface.OnClickListener) null);
+		alert.show();
+	}
+	
+	
+	public static Boolean connectionStatus(Context context) {
+		Boolean connect = false;
+		ConnectivityManager cm = (ConnectivityManager) context
+				.getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo ni = cm.getActiveNetworkInfo();
+		String connectionType = "You are not connect to the internet";
+		if (ni != null) {
+			if (ni.isConnected()) {
+				Log.i(TAG, "connection type " + ni.getTypeName());
+				connect = true;
+				connectionType = ni.getTypeName();
+			}
+		}
+		Log.i(TAG, connectionType);
+		return connect;
+
+	}
+}

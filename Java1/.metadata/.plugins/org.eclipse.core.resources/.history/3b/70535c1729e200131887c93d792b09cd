@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">NBA Headlines</string>
+
+     <string-array name="headline_array">
+        <item>Headlines</item>
+        <item>Popular_Storys</item>
+    </string-array>
+  
+         
+    <string name="Select_Team">Select Story</string>
+
+
+</resources>
